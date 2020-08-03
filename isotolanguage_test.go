@@ -6,7 +6,7 @@ import (
 )
 
 func TestService_FindFromIso(t *testing.T) {
-	err, service := New()
+	service, err := New()
 
 	require.NoError(t, err)
 

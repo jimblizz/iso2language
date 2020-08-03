@@ -21,7 +21,7 @@ type (
 	}
 )
 
-func New() (err error, service Service) {
+func New() (service Service, err error) {
 	file, err := os.OpenFile("data.csv", os.O_RDONLY, os.ModePerm)
 	if err != nil {
 		return
