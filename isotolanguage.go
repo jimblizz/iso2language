@@ -2,7 +2,6 @@ package isotolanguage
 
 import (
 	"github.com/gocarina/gocsv"
-	"os"
 	"strings"
 )
 
@@ -22,16 +21,11 @@ type (
 )
 
 func New() (service Service, err error) {
-	file, err := os.OpenFile("data.csv", os.O_RDONLY, os.ModePerm)
-	if err != nil {
-		return
-	}
-
 	service.indexIso2 = make(map[string]Language, 0)
 	service.indexIso3 = make(map[string]Language, 0)
 
 	languages := make([]Language, 0)
-	if err = gocsv.UnmarshalFile(file, &languages); err != nil {
+	if err = gocsv.UnmarshalString(Data, &languages); err != nil {
 		return
 	}
 
