@@ -1,13 +1,12 @@
-package isotolanguage_test
+package isotolanguage
 
 import (
 	"github.com/stretchr/testify/require"
-	"isotolanguage"
 	"testing"
 )
 
 func TestService_FindFromIso(t *testing.T) {
-	err, service := isotolanguage.New()
+	err, service := New()
 
 	require.NoError(t, err)
 

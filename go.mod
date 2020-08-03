@@ -1,4 +1,4 @@
-module isotolanguage
+module github.com/jimblizz/iso2language
 
 go 1.13
 
